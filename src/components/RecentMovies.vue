@@ -3,9 +3,14 @@ import SectionTitle from '@/@ui/components/SectionTitle.vue'
 import ThumbnailSwiper from '@/@ui/components/ThumbnailSwiper.vue'
 import { useMoviesStore } from '@/stores/movies'
 import { storeToRefs } from 'pinia'
+import { computed } from 'vue'
+import { SlideItem } from '@/@ui/types'
+import { mapToSlideItems } from '@/utils/mapping'
 
 const store = useMoviesStore()
 const { recentMovies } = storeToRefs(store)
+
+const slideItems = computed<SlideItem[]>(() => mapToSlideItems(recentMovies.value))
 </script>
 <template>
   <SectionTitle title="Recent Movies">
@@ -24,5 +29,5 @@ const { recentMovies } = storeToRefs(store)
       ></path>
     </svg>
   </SectionTitle>
-  <ThumbnailSwiper :slides="recentMovies" />
+  <ThumbnailSwiper :slides="slideItems" />
 </template>

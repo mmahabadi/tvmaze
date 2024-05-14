@@ -1,5 +1,5 @@
 <template>
-  <header class="shadow-md sticky top-0 z-20">
+  <header class="shadow-md sticky top-0 z-20 backdrop-blur-sm bg-gray-900/30">
     <div
       class="container mx-auto py-6 px-2 lg:grid gap-10 grid-cols-7 justify-between items-center"
     >

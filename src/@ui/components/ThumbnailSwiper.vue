@@ -3,7 +3,7 @@ import { SwiperSlide, Swiper } from 'swiper/vue'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 import { ref } from 'vue'
 import ThumbnailItem from './ThumbnailItem.vue'
-import { Movie } from '@/types'
+import { SlideItem } from '../types'
 
 import 'swiper/css'
 import 'swiper/css/autoplay'
@@ -11,7 +11,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
-defineProps<{ slides: Movie[] }>()
+defineProps<{ slides: SlideItem[] }>()
 
 const modules = ref([Autoplay, Pagination, Navigation])
 </script>

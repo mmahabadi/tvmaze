@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Movie } from '@/types'
+import { SlideItem } from '../types'
 import RatingStar from './RatingStar.vue'
 import PlayIcon from './icons/PlayIcon.vue'
 
-defineProps<{ item: Movie }>()
+defineProps<{ item: SlideItem }>()
 </script>
 <template>
   <div
@@ -11,7 +11,7 @@ defineProps<{ item: Movie }>()
     class="p-4 h-rate border border-border cursor-pointer bg-dry rounded-lg overflow-hidden"
   >
     <img
-      :src="item.image?.medium"
+      :src="item.image"
       alt="About Time of the Dead"
       class="w-full h-full object-cover rounded-lg"
     />
@@ -24,7 +24,7 @@ defineProps<{ item: Movie }>()
         <PlayIcon />
       </button>
       <a class="font-semibold text-xl trancuted line-clamp-2" :href="item.name">{{ item.name }}</a>
-      <RatingStar :rating="item.rating?.average || 0" />
+      <RatingStar :rating="item.rating" />
     </div>
   </div>
 </template>
