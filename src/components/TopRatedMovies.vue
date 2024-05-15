@@ -5,7 +5,7 @@ import SectionTitle from '@/@ui/components/SectionTitle.vue'
 import ThumbnailSwiper from '@/components/thumbnail/ThumbnailSwiper.vue'
 import IconScreen from '@/components/icons/IconScreen.vue'
 import { computed } from 'vue'
-import { SlideItem } from '@/types'
+import { type SlideItem } from '@/types'
 import { mapToSlideItems } from '@/utils/mapping'
 
 const store = useMoviesStore()

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Swiper } from 'swiper/vue'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
-import { SwiperOptions } from '@/@ui/types'
+import { type SwiperOptions } from '@/@ui/types'
 import { defineProps, computed } from 'vue'
 
 import 'swiper/css'
@@ -16,10 +16,7 @@ const swiperStyle = {
   '--swiper-navigation-color': 'rgb(20 184 166 / var(--tw-text-opacity))',
   '--swiper-pagination-color': 'rgb(20 184 166 / var(--tw-text-opacity))'
 }
-const swiperOptions: SwiperOptions = computed(() => ({
-  centeredSlides: false,
-  navigation: false,
-  scrollbar: { draggable: true },
+const swiperOptions = computed(() => ({
   ...props
 }))
 </script>
