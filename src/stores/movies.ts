@@ -9,11 +9,11 @@ export const useMoviesStore = defineStore('movies', () => {
   const error = ref(null)
 
   const topRatedMovies = computed(() =>
-    movies.value.filter((movie) => movie.rating.average > 8).slice(0, 10)
+    movies.value.filter((movie) => movie.rating.average > 8).slice(0, 20)
   )
 
   const recentMovies = computed(() =>
-    movies.value.filter((movie) => new Date(movie.ended).getFullYear() > 2020).slice(0, 10)
+    movies.value.filter((movie) => new Date(movie.ended).getFullYear() > 2020).slice(0, 20)
   )
 
   async function fetchMovies() {

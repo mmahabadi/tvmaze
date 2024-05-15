@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { SlideItem } from '../types'
-import RatingStar from './RatingStar.vue'
-import PlayIcon from './icons/PlayIcon.vue'
+import { SlideItem } from '@/types'
+import RatingStar from '@/@ui/components/RatingStar.vue'
+import IconPlay from '../icons/IconPlay.vue'
 
 defineProps<{ item: SlideItem }>()
 </script>
@@ -21,7 +21,7 @@ defineProps<{ item: SlideItem }>()
       <button
         class="w-12 h-12 flex justify-center items-center transitions hover:bg-subMain rounded-full bg-white bg-opacity-30 text-white"
       >
-        <PlayIcon />
+        <IconPlay />
       </button>
       <a class="font-semibold text-xl trancuted line-clamp-2" :href="item.name">{{ item.name }}</a>
       <RatingStar :rating="item.rating" />

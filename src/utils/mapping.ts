@@ -1,5 +1,5 @@
-import { Movie } from '@/types/movie'
-import { SlideItem } from '@/@ui/types/slide'
+import { Movie } from '@/types'
+import { SlideItem } from '@/types'
 
 export const mapToSlideItems = (recentMovies: Movie[]): SlideItem[] => {
   return recentMovies.map((item) => ({

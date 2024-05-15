@@ -2,9 +2,10 @@
 import { onMounted } from 'vue'
 import { useMoviesStore } from '@/stores/movies'
 import MainLayout from '@/layouts/MainLayout.vue'
-import ImageSlider from '@/layouts/components/slider/ImageSlider.vue'
+import ImageSlider from '@/components/slider/ImageSlider.vue'
 import TopRatedMovies from '@/components/TopRatedMovies.vue'
 import RecentMovies from '@/components/RecentMovies.vue'
+import CTA from '@/components/CTA.vue'
 
 const store = useMoviesStore()
 
@@ -20,8 +21,11 @@ onMounted(() => {
 
 <template>
   <MainLayout>
-    <ImageSlider />
+    <template v-slot:slider>
+      <ImageSlider />
+    </template>
     <TopRatedMovies />
+    <CTA />
     <RecentMovies />
   </MainLayout>
 </template>

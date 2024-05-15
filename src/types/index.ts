@@ -57,3 +57,5 @@ export type Movie = {
   //     }
   //   }
 }
+
+export type SlideItem = Pick<Movie, 'id' | 'name'> & { rating: number; image: string }
