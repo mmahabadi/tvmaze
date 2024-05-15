@@ -1,5 +1,5 @@
 const getData = async () => {
-  const response = await fetch('https://api.tvmaze.com/shows')
+  const response = await fetch('/api/shows')
   const result = await response.json()
   return result
 }
