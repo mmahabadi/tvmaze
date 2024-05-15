@@ -2,8 +2,8 @@
 import { SwiperSlide } from 'swiper/vue'
 import SwiperWrapper from '@/@ui/components/SwiperWrapper.vue'
 import ThumbnailItem from './ThumbnailItem.vue'
-import { SlideItem } from '@/types'
-import { SwiperOptions } from '@/@ui/types'
+import { type SlideItem } from '@/types'
+import { type SwiperOptions } from '@/@ui/types'
 
 defineProps<{ slides: SlideItem[] }>()
 

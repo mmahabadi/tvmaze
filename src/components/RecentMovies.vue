@@ -4,7 +4,7 @@ import ThumbnailSwiper from '@/components/thumbnail/ThumbnailSwiper.vue'
 import { useMoviesStore } from '@/stores/movies'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
-import { SlideItem } from '@/types'
+import { type SlideItem } from '@/types'
 import { mapToSlideItems } from '@/utils/mapping'
 import IconFilm from '@/components/icons/IconFilm.vue'
 

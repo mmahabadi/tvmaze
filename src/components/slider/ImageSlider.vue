@@ -4,6 +4,7 @@ import { storeToRefs } from 'pinia'
 import { useMoviesStore } from '@/stores/movies'
 import SliderItem from './SliderItem.vue'
 import SwiperWrapper from '@/@ui/components/SwiperWrapper.vue'
+import { type SwiperOptions } from '@/@ui/types'
 
 import 'swiper/css'
 import 'swiper/css/autoplay'

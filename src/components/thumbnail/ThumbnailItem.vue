@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SlideItem } from '@/types'
+import { type SlideItem } from '@/types'
 import RatingStar from '@/@ui/components/RatingStar.vue'
 import IconPlay from '../icons/IconPlay.vue'
 
