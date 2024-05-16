@@ -1,5 +1,8 @@
+<script setup lang="ts">
+import { RouterLink } from 'vue-router'
+</script>
 <template>
-  <a href="/">
+  <RouterLink to="/">
     <img src="@/assets/logo.png" alt="logo" class="w-full h-12 object-contain" />
-  </a>
+  </RouterLink>
 </template>

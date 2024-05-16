@@ -19,9 +19,20 @@ const swiperStyle = {
 const swiperOptions = computed(() => ({
   ...props
 }))
+const breakpoints = computed(() => ({
+  0: { slidesPerView: 1, spaceBetween: 10 },
+  768: { slidesPerView: 2, spaceBetween: 10 },
+  1024: { slidesPerView: 3, spaceBetween: 20 },
+  1280: { slidesPerView: props.slidesPerView, spaceBetween: props.spaceBetween }
+}))
 </script>
 <template>
-  <swiper :style="swiperStyle" v-bind="swiperOptions" :modules="[Autoplay, Pagination, Navigation]">
+  <swiper
+    :style="swiperStyle"
+    :modules="[Autoplay, Pagination, Navigation]"
+    v-bind="swiperOptions"
+    :breakpoints="breakpoints"
+  >
     <slot></slot>
   </swiper>
 </template>
