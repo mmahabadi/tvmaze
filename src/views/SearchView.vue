@@ -37,8 +37,8 @@ const searchShows = () => {
       <SearchIcon />
     </SectionTitle>
     <div class="container">
-      <div class="item" v-for="slide in store.searchResults" :key="slide.id">
-        <ShowItem :item="slide" />
+      <div class="item" v-for="item in store.searchResults" :key="item.id">
+        <ShowItem v-if="item" :id="item.id" :name="item.name" :image="item.image?.medium" />
       </div>
     </div>
   </MainLayout>

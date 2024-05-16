@@ -2,17 +2,24 @@
 import { RouterLink } from 'vue-router'
 import { type Movie } from '@/types'
 import IconPlay from '@/components/icons/IconPlay.vue'
-defineProps<{ item: Movie }>()
+
+type propType = {
+  image: string
+  name: string
+  id: number
+}
+
+defineProps<propType>()
 </script>
 <template>
-  <div v-if="item" class="show-item transitions">
-    <RouterLink :to="`/details/${item.id}`">
+  <div class="show-item transitions">
+    <RouterLink :to="`/details/${id}`">
       <div>
-        <img v-if="item.image?.medium" :src="item.image?.medium" :alt="item.name" />
+        <img v-if="image" :src="image" :alt="name" />
         <img v-else src="@/assets/image-placeholder.jpg" alt="image-placeholder" />
       </div>
       <div class="caption">
-        <h3>{{ item.name }}</h3>
+        <h3>{{ name }}</h3>
         <button class="transitions">
           <IconPlay />
         </button>

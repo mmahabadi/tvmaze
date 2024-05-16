@@ -32,9 +32,9 @@ const handleScroll = () => {
 
 <template>
   <MainLayout :loading="store.loading">
-    <!-- <template v-slot:slider>
+    <template v-slot:slider>
       <ImageSlider />
-    </template> -->
+    </template>
     <div v-for="genre in store.genres" :key="genre">
       <ListByGenre :genre="genre" />
     </div>
