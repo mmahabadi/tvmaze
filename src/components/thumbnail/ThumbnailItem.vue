@@ -37,7 +37,7 @@ defineProps<{ item: SlideItem }>()
       @apply w-12 h-12 flex justify-center items-center transition hover:bg-teal-500 rounded-full bg-white bg-opacity-30 text-white;
     }
     .title {
-      @apply font-semibold text-xl truncate line-clamp-2;
+      @apply font-semibold w-full text-xl truncate overflow-hidden line-clamp-2;
     }
   }
 }

@@ -17,3 +17,10 @@ export const search = async (q: string): Promise<Movie[]> => {
   const result = await response.json()
   return result?.map((item: any) => item.show as Movie) || []
 }
+
+export const getShowsByGenre = async (genre: string): Promise<Movie[]> => {
+  if (!genre) throw new Error('Genre is required')
+  const response = await fetch(`/api/shows?genre=${genre}`)
+  const result = await response.json()
+  return result
+}

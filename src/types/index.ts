@@ -12,6 +12,13 @@ export type Image = {
   original: string
 }
 
+export type ShowByGenre = {
+  genre: string
+  movies: Movie[]
+  loading: boolean
+  error: null | Error
+}
+
 export type Movie = {
   id: number
   name: string
