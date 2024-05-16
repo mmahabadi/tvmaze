@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import DOMPurify from 'dompurify'
-import { RouterLink } from 'vue-router'
+import { useRouter } from 'vue-router'
 import { computed, defineProps } from 'vue'
 import type { Movie } from '@/types'
 import CalendarIcon from '@/@ui/components/icons/CalendarIcon.vue'
@@ -10,6 +10,7 @@ import IconPlay from '@/components/icons/IconPlay.vue'
 import DownloadIcon from '@/@ui/components/icons/DownloadIcon.vue'
 
 const props = defineProps<{ item: Movie }>()
+const router = useRouter()
 const { item } = props
 
 const year = computed(() => {
@@ -17,11 +18,15 @@ const year = computed(() => {
 })
 
 const sanitizedSummary = computed(() => DOMPurify.sanitize(item.summary))
+
+const goBack = () => {
+  router.go(-1)
+}
 </script>
 <template>
   <div class="w-full xl:h-screen relative text-white">
     <img
-      :src="item.image.original"
+      :src="item.image?.original"
       :alt="item.name"
       class="w-full hidden xl:inline-block h-full object-cover object-top"
     />
@@ -34,7 +39,7 @@ const sanitizedSummary = computed(() => DOMPurify.sanitize(item.summary))
         <div
           class="xl:col-span-1 w-full xl:order-none order-last h-header bg-dry border border-gray-800 rounded-lg overflow-hidden"
         >
-          <img :src="item.image.medium" :alt="item.name" class="w-full h-full object-cover" />
+          <img :src="item.image?.medium" :alt="item.name" class="w-full h-full object-cover" />
         </div>
         <div class="col-span-2 md:grid grid-cols-5 gap-4 items-center">
           <div class="col-span-3 flex flex-col gap-10">
@@ -53,7 +58,7 @@ const sanitizedSummary = computed(() => DOMPurify.sanitize(item.summary))
               <div class="flex items-center gap-2">
                 <ClockIcon class="text-teal-500" />
                 <span class="text-sm font-medium"
-                  >{{ item.schedule.days.join(',') }} {{ item.schedule.time }}</span
+                  >{{ item.schedule.days?.join(',') }} {{ item.schedule.time }}</span
                 >
               </div>
             </div>
@@ -84,15 +89,15 @@ const sanitizedSummary = computed(() => DOMPurify.sanitize(item.summary))
             </div>
           </div>
           <div class="col-span-2 md:mt-0 mt-2 flex justify-center items-center">
-            <RouterLink
-              to="/"
+            <button
+              @click="goBack"
               class="md:w-1/4 w-full flex justify-center items-center bg-teal-500 hover:bg-transparent border-2 border-teal-500 transitions duration-300 md:h-64 h-20 rounded font-medium"
             >
               <div class="inline-flex gap-6 text-md uppercase tracking-widest md:rotate-90">
-                HomePage
+                Back
                 <DownloadIcon class="rotate-90" />
               </div>
-            </RouterLink>
+            </button>
           </div>
         </div>
       </div>

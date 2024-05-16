@@ -1,8 +1,6 @@
 <template>
-  <header class="shadow-md sticky top-0 z-20 backdrop-blur-sm bg-gray-900/30">
-    <div
-      class="container mx-auto py-6 px-2 lg:grid gap-10 grid-cols-7 justify-between items-center"
-    >
+  <header>
+    <div class="container">
       <div class="col-span-1 lg:block hidden"><slot name="logo"></slot></div>
 
       <div class="col-span-3">
@@ -16,3 +14,23 @@
     </div>
   </header>
 </template>
+<style>
+header {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+  .container {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    @apply lg:grid gap-10 grid-cols-7;
+  }
+}
+</style>
