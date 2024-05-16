@@ -1,9 +1,10 @@
+<script setup lang="ts"></script>
 <template>
-  <a class="hover:text-subMain transitions text-white" href="/movies">Movies</a
-  ><a class="hover:text-subMain transitions text-white" href="/about-us">About Us</a
-  ><a class="hover:text-subMain transitions text-white" href="/contact-us">Contact Us</a
-  ><a class="hover:text-subMain transitions text-white" href="/login"
-    ><svg
+  <a class="hover:text-subMain transitions text-white" href="">Shows</a>
+  <a class="hover:text-subMain transitions text-white" href="">About Us</a>
+  <a class="hover:text-subMain transitions text-white" href="">Contact Us</a>
+  <a class="hover:text-subMain transitions text-white" href="">
+    <svg
       stroke="currentColor"
       fill="none"
       stroke-width="0"
@@ -22,11 +23,14 @@
       <path
         d="M16 15C16 14.4477 15.5523 14 15 14H9C8.44772 14 8 14.4477 8 15V21H6V15C6 13.3431 7.34315 12 9 12H15C16.6569 12 18 13.3431 18 15V21H16V15Z"
         fill="currentColor"
-      ></path></svg></a
-  ><a
+      ></path>
+    </svg>
+  </a>
+  <a
     class="e=>{let{isActive:s}=e;return s?&quot;text-subMain&quot;:&quot;hover:text-subMain transitions text-white&quot;} relative"
     href="/favorites"
-    ><svg
+  >
+    <svg
       stroke="currentColor"
       fill="currentColor"
       stroke-width="0"
@@ -44,6 +48,6 @@
       class="w-5 h-5 flex-colo rounded-full text-xs bg-subMain text-white absolute -top-5 -right-1"
     >
       3
-    </div></a
-  >
+    </div>
+  </a>
 </template>

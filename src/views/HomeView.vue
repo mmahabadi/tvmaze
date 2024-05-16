@@ -16,7 +16,9 @@ const store = useMoviesStore()
 onMounted(() => {
   document.addEventListener('scroll', handleScroll)
 
-  store.fetchMovies()
+  if (store.genres.length === 0) {
+    store.fetchMovies()
+  }
 })
 
 const handleScroll = () => {
@@ -29,7 +31,7 @@ const handleScroll = () => {
 </script>
 
 <template>
-  <MainLayout>
+  <MainLayout :loading="store.loading">
     <!-- <template v-slot:slider>
       <ImageSlider />
     </template> -->

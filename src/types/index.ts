@@ -56,6 +56,40 @@ export type Movie = {
   //       name: 'The Enemy Within'
   //     }
   //   }
+  _embedded: Embedded
+}
+
+export type Embedded = {
+  cast: Cast[]
+}
+
+export type Cast = {
+  person: Person
+  character: Character
+}
+
+export type Person = {
+  id: number
+  url: string
+  name: string
+  country: Country
+  birthday: string
+  deathday: string | null
+  image: Image
+  gender: string
+}
+
+export type Country = {
+  name: string
+  code: string
+  timezone: string
+}
+
+export type Character = {
+  id: number
+  url: string
+  name: string
+  image: Image
 }
 
 export type SlideItem = Pick<Movie, 'id' | 'name'> & { rating: number; image: string }
