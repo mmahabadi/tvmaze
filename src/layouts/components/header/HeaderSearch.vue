@@ -8,7 +8,8 @@ const store = useSearchStore()
 const searchQuery = ref('')
 const router = useRouter()
 const route = useRoute()
-const timeout = ref<number | null>(null)
+type Timeout = ReturnType<typeof setTimeout>
+const timeout = ref<Timeout | null>(null)
 
 const results = computed(() =>
   store.searchResults?.slice(0, 5).map((show) => ({ name: show?.name, id: show?.id }))

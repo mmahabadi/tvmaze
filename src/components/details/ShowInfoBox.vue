@@ -2,9 +2,14 @@
 import { defineProps } from 'vue'
 import CalendarIcon from '@/@ui/components/icons/CalendarIcon.vue'
 import ClockIcon from '@/@ui/components/icons/ClockIcon.vue'
-import { Movie } from '@/types'
 
-type propType = Partial<Pick<Movie, 'status' | 'year' | 'days' | 'time'>> & { genres?: string }
+type propType = Partial<{
+  genres: string
+  time: string
+  days: string
+  year: string
+  status: string
+}>
 
 defineProps<propType>()
 </script>

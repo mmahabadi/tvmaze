@@ -35,7 +35,7 @@ const searchHandler = () => {
       </button>
       <input
         :value="searchQuery"
-        @input="updateValue($event.target.value)"
+        @input="updateValue(($event.target as HTMLInputElement)?.value)"
         type="text"
         placeholder="Search show from here"
         class="search-input"
@@ -102,7 +102,7 @@ const searchHandler = () => {
   }
   &:hover .dropdown,
   &:focus-within .dropdown,
-  &:active .dropdown{
+  &:active .dropdown {
     @apply block;
   }
 }
