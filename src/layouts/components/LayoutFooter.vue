@@ -6,6 +6,6 @@ const year = new Date().getFullYear()
 </template>
 <style scoped>
 .footer {
-  @apply mt-9 flex h-16 justify-center items-center bg-gray-900;
+  @apply mt-9 flex h-16 text-xs justify-center items-center bg-gray-900;
 }
 </style>

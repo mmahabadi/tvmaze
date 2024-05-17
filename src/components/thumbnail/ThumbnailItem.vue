@@ -3,13 +3,14 @@ import { RouterLink } from 'vue-router'
 import { type SlideItem } from '@/types'
 import RatingStar from '@/@ui/components/RatingStar.vue'
 import IconPlay from '../icons/IconPlay.vue'
+import Image from '@/@ui/components/Image.vue'
 
 defineProps<{ item: SlideItem }>()
 </script>
 <template>
   <div v-if="!!item" class="container">
     <RouterLink :to="`/details/${item.id}`">
-      <img :src="item.image" :alt="item.name" />
+      <Image class="t-image" :src="item.image" :alt="item.name" />
       <div class="item">
         <button class="item-button">
           <IconPlay />
@@ -27,8 +28,8 @@ defineProps<{ item: SlideItem }>()
   RouterLink {
     @apply hover:text-teal-500 transition text-white flex justify-center items-center;
   }
-  img {
-    @apply w-full h-full object-cover rounded-lg;
+  .t-image {
+    @apply w-full h-full min-h-44 object-cover rounded-lg;
   }
   .item {
     @apply px-4 gap-6 text-center absolute hover:bg-black hover:bg-opacity-70 top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center transition duration-300 ease-in-out opacity-0 hover:opacity-100;

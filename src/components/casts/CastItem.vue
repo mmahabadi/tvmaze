@@ -1,24 +1,21 @@
 <script setup lang="ts">
 import { type Person } from '@/types'
+import Image from '@/@ui/components/Image.vue'
 
 defineProps<{ item: Person }>()
 </script>
 <template>
-  <div
-    class="w-full p-3 italic text-xs text-text rounded flex-col bg-gray-900 border border-gray-800"
-  >
-    <img
-      v-if="item.image?.medium"
-      :src="item.image?.medium"
-      :alt="item.name"
-      class="w-full h-64 object-cover rounded mb-4"
-    />
-    <img
-      v-else
-      src="@/assets/image-placeholder.jpg"
-      alt="image-placeholder"
-      class="w-full h-64 object-cover rounded mb-4"
-    />
+  <div class="cast-item">
+    <Image :src="item.image?.medium" :alt="item.name" class="img" />
     <p class="text-center">{{ item.name }}</p>
   </div>
 </template>
+<style scoped>
+.cast-item {
+  @apply w-full p-3 rounded flex-col bg-gray-900 border border-gray-800;
+
+  .img {
+    @apply w-full h-96 object-cover rounded mb-4;
+  }
+}
+</style>

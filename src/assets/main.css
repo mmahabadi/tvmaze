@@ -9,7 +9,8 @@
   --color-gray: rgb(16 24 39);
 }
 html,
-body {
+body,
+#app {
   background-color: var(--bg-color);
   height: 100%;
 }

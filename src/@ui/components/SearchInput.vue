@@ -83,7 +83,7 @@ const searchHandler = () => {
   @apply relative inline-block w-full;
 
   .dropdown {
-    @apply hidden absolute z-10 divide-y divide-gray-100 rounded-lg shadow w-full max-w-[600px] bg-gray-700;
+    @apply hidden absolute z-10 divide-y divide-gray-100 rounded-lg shadow w-full max-w-[650px] bg-gray-700;
 
     ul {
       @apply py-2 text-sm text-gray-200;
@@ -100,7 +100,9 @@ const searchHandler = () => {
       }
     }
   }
-  &:hover .dropdown {
+  &:hover .dropdown,
+  &:focus-within .dropdown,
+  &:active .dropdown{
     @apply block;
   }
 }

@@ -4,6 +4,7 @@ import DateIcon from '@/@ui/components/icons/CalendarIcon.vue'
 import ClockIcon from '@/@ui/components/icons/ClockIcon.vue'
 import IconPlay from '@/components/icons/IconPlay.vue'
 import { RouterLink } from 'vue-router'
+import Image from '@/@ui/components/Image.vue'
 
 const { endDate } = defineProps<{
   id: number
@@ -17,7 +18,7 @@ const { endDate } = defineProps<{
 const year = computed(() => new Date(endDate).getFullYear())
 </script>
 <template>
-  <img :src="image" alt="poster" class="poster" />
+  <Image :src="image" alt="poster" class="poster" />
   <div class="bg-overlay">
     <div class="details">
       <h1 class="text-heading">
