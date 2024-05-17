@@ -24,7 +24,7 @@ const goBack = () => {
 }
 </script>
 <template>
-  <div class="w-full xl:h-screen relative text-white">
+  <div class="w-full max-h-[700px] overflow-hidden relative text-white">
     <img
       :src="item.image?.original"
       :alt="item.name"

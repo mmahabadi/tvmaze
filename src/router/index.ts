@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/details/:id',
       name: 'details',
-      component: () => import('@/views/ShowDetails.vue')
+      component: () => import('@/views/DetailsView.vue')
     },
     {
       path: '/search',

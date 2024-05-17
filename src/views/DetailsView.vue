@@ -23,6 +23,6 @@ const casts = computed(() => store.details?._embedded?.cast?.map((item) => item.
     <template v-slot:slider>
       <DetailsPoster v-if="store.details" :item="store.details" />
     </template>
-    <CasteSwiper v-if="casts" :slides="casts" />
+    <CasteSwiper v-if="!!casts?.length" :slides="casts" />
   </MainLayout>
 </template>
