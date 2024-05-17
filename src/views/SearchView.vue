@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import { useMoviesStore } from '@/stores/movies'
-import { onMounted, watch, ref, computed } from 'vue'
+import { useSearchStore } from '@/stores/search'
+import { onMounted, watch, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import MainLayout from '@/layouts/MainLayout.vue'
 import SectionTitle from '@/@ui/components/SectionTitle.vue'
 import SearchIcon from '@/@ui/components/icons/SearchIcon.vue'
-import type { SlideItem } from '@/types'
-import { mapToSlideItems } from '@/utils/mapping'
 import ShowItem from '@/components/ShowItem.vue'
 
-const store = useMoviesStore()
+const store = useSearchStore()
 const route = useRoute()
 const query = ref('')
 
@@ -37,6 +35,9 @@ const searchShows = () => {
       <SearchIcon />
     </SectionTitle>
     <div class="container">
+      <div class="no-result" v-if="store.searchResults?.length === 0">
+        <p>No results found</p>
+      </div>
       <div class="item" v-for="item in store.searchResults" :key="item.id">
         <ShowItem v-if="item" :id="item.id" :name="item.name" :image="item.image?.medium" />
       </div>
@@ -45,14 +46,13 @@ const searchShows = () => {
 </template>
 <style scoped>
 .container {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  @apply flex gap-4 flex-wrap justify-center;
 
   .item {
-    width: 100%;
-    max-width: 16rem;
+    @apply w-full md:w-1/2 lg:w-1/3 xl:w-1/4;
+  }
+  .no-result {
+    @apply w-full  h-full flex items-center justify-center;
   }
 }
 </style>

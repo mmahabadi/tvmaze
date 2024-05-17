@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useMoviesStore } from '@/stores/movies'
 import MainLayout from '@/layouts/MainLayout.vue'
@@ -9,11 +9,22 @@ import { type Person } from '@/types'
 
 const route = useRoute()
 const store = useMoviesStore()
-const showId = Number(route.params.id)
+const showId = computed(() => +route.params.id)
+
+watch(
+  () => route.params.id,
+  (newValue) => {
+    getShow(+newValue)
+  }
+)
 
 onMounted(() => {
-  store.getShowDetails(showId)
+  getShow(showId.value)
 })
+
+const getShow = (id: number) => {
+  store.getShowDetails(id)
+}
 
 const casts = computed(() => store.details?._embedded?.cast?.map((item) => item.person as Person))
 </script>

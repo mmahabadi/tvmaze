@@ -10,8 +10,6 @@ export const useMoviesStore = defineStore('movies', () => {
   const loading = ref(false)
   const error = ref<null | Error>(null)
   const currentIndex = ref(1)
-  const searchResults = ref<Movie[]>([])
-  let searchQuery = ''
   const ITEMS_PER_PAGE = 3
   const ITEMS_LIMIT_FOR_RECENT_MOVIES = 15
   const DATE_LIMIT_FOR_RECENT_MOVIES = 2020
@@ -108,24 +106,9 @@ export const useMoviesStore = defineStore('movies', () => {
     }
   }
 
-  async function searchShows(query: string): Promise<void> {
-    //avoid making the same request multiple times
-    if (searchQuery === query) return
-    searchQuery = query
-    loading.value = true
-    try {
-      searchResults.value = await ApiService.search(query)
-    } catch (e) {
-      error.value = e as Error
-    } finally {
-      loading.value = false
-    }
-  }
-
   return {
     movies,
     genres: paginatedGenres,
-    searchResults,
     recentMovies,
     details,
     loading,
@@ -133,7 +116,6 @@ export const useMoviesStore = defineStore('movies', () => {
     fetchMovies,
     getByGenre,
     nextPage,
-    getShowDetails,
-    searchShows
+    getShowDetails
   }
 })
