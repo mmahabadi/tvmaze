@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { useMoviesStore } from '@/stores/movies'
+import { useDetailsStore } from '@/stores/details'
 import MainLayout from '@/layouts/MainLayout.vue'
 import DetailsPoster from '@/components/details/DetailsPoster.vue'
 import CasteSwiper from '@/components/casts/CastSwiper.vue'
 import { type Person } from '@/types'
 
 const route = useRoute()
-const store = useMoviesStore()
+const store = useDetailsStore()
 const showId = computed(() => +route.params.id)
 
 watch(

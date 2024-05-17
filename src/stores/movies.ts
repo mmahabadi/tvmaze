@@ -6,7 +6,6 @@ import { type Movie, type ShowByGenre } from '@/types'
 export const useMoviesStore = defineStore('movies', () => {
   const shows = ref<Map<string, ShowByGenre>>(new Map())
   const movies = ref<Movie[]>([])
-  const details = ref<Movie | null>(null)
   const loading = ref(false)
   const error = ref<null | Error>(null)
   const currentIndex = ref(1)
@@ -95,27 +94,14 @@ export const useMoviesStore = defineStore('movies', () => {
     if (currentIndex.value * ITEMS_PER_PAGE <= genres.value.length) currentIndex.value++
   }
 
-  async function getShowDetails(id: number): Promise<void> {
-    loading.value = true
-    try {
-      details.value = await ApiService.getDetails(id)
-    } catch (e) {
-      error.value = e as Error
-    } finally {
-      loading.value = false
-    }
-  }
-
   return {
     movies,
     genres: paginatedGenres,
     recentMovies,
-    details,
     loading,
     error,
     fetchMovies,
     getByGenre,
-    nextPage,
-    getShowDetails
+    nextPage
   }
 })
