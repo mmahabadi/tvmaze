@@ -8,8 +8,6 @@ import { RouterLink } from 'vue-router'
 </template>
 <style>
 .logo {
-  width: 100%;
-  height: 3rem;
-  object-fit: contain;
+  @apply w-full h-12 object-contain;
 }
 </style>

@@ -9,9 +9,9 @@ import Loading from '@/@ui/components/LoadingOverlay.vue'
 defineProps<{ loading: boolean }>()
 </script>
 <template>
-  <main class="bg-black text-white">
+  <main class="main">
     <Loading v-if="loading" />
-    <div v-else>
+    <div class="scr" v-else>
       <LayoutHeader>
         <template v-slot:logo>
           <HeaderLogo />
@@ -23,10 +23,21 @@ defineProps<{ loading: boolean }>()
         <HeaderNav />
       </LayoutHeader>
       <slot name="slider"></slot>
-      <div class="container mx-auto py-6 px-2">
+      <div class="container">
         <slot></slot>
       </div>
       <LayoutFooter />
     </div>
   </main>
 </template>
+<style scoped>
+.main {
+  @apply text-white h-full;
+}
+.scr {
+  @apply flex flex-col min-h-screen;
+}
+.container {
+  @apply mx-auto py-6 px-2 flex-1;
+}
+</style>

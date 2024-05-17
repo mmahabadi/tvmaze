@@ -3,8 +3,11 @@ import { computed } from 'vue'
 import DateIcon from '@/@ui/components/icons/CalendarIcon.vue'
 import ClockIcon from '@/@ui/components/icons/ClockIcon.vue'
 import IconPlay from '@/components/icons/IconPlay.vue'
+import { RouterLink } from 'vue-router'
+import Image from '@/@ui/components/Image.vue'
 
-const { name, image, endDate, rating, genre } = defineProps<{
+const { endDate } = defineProps<{
+  id: number
   name: string
   image: string
   endDate: string
@@ -15,36 +18,29 @@ const { name, image, endDate, rating, genre } = defineProps<{
 const year = computed(() => new Date(endDate).getFullYear())
 </script>
 <template>
-  <img :src="image" alt="poster" class="w-full h-full object-cover object-top" />
-  <div
-    class="bg-black/40 absolute top-0 bottom-0 right-0 left-0 flex flex-col justify-center items-center"
-  >
-    <div
-      class="details transition-opacity duration-200 ease-in opacity-0 flex flex-col justify-center md:gap-5 gap-4 items-center"
-    >
-      <h1 class="xl:text-4xl truncate capitalize font-sans sm:text-2xl text-4xl font-bold">
+  <Image :src="image" alt="poster" class="poster" />
+  <div class="bg-overlay">
+    <div class="details">
+      <h1 class="text-heading">
         {{ name }}
       </h1>
-      <div class="flex gap-5 items-center">
-        <div class="flex items-center gap-2">
-          <span class="text-sm font-medium">{{ genre }}</span>
+      <div class="info-section">
+        <div class="info-part">
+          <span class="info-text">{{ genre }}</span>
         </div>
-        <div class="flex items-center gap-2">
-          <DateIcon class="text-teal-500" /><span class="text-sm font-medium">{{ year }}</span>
+        <div class="info-part">
+          <DateIcon class="text-teal-500" /><span class="info-text">{{ year }}</span>
         </div>
-        <div class="flex items-center gap-2">
-          <ClockIcon class="text-teal-500" /><span class="text-sm font-medium">{{ rating }}hr</span>
+        <div class="info-part">
+          <ClockIcon class="text-teal-500" /><span class="info-text">{{ rating }}hr</span>
         </div>
       </div>
-      <div class="flex gap-5 items-center">
-        <a
-          class="watch-button bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
-          :href="name"
-        >
+      <div class="info-section">
+        <RouterLink class="watch-button" :to="`/details/${id}`">
           <IconPlay class="text-white mr-2" />
           <IconPlay class="text-white mr-2 opacity-0 absolute animate-ping" />
           Watch
-        </a>
+        </RouterLink>
       </div>
     </div>
   </div>
@@ -53,5 +49,34 @@ const year = computed(() => new Date(endDate).getFullYear())
 .swiper-slide-next .details,
 .watch-button:hover .animate-ping {
   opacity: 100;
+}
+.poster {
+  @apply w-full h-full object-cover object-top;
+}
+.bg-overlay {
+  @apply bg-black/40 absolute top-0 bottom-0 right-0 left-0 flex flex-col justify-center items-center;
+}
+.details {
+  @apply transition-opacity duration-200 ease-in opacity-0 flex flex-col justify-center md:gap-5 gap-4 items-center;
+
+  .text-heading {
+    @apply xl:text-4xl truncate capitalize font-sans sm:text-2xl text-4xl font-bold;
+  }
+
+  .watch-button {
+    @apply bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded inline-flex items-center;
+  }
+
+  .info-section {
+    @apply flex gap-5 items-center;
+
+    .info-part {
+      @apply flex items-center gap-2;
+
+      .info-text {
+        @apply text-sm font-medium;
+      }
+    }
+  }
 }
 </style>
