@@ -20,10 +20,23 @@ const swiperOptions = computed(() => ({
   ...props
 }))
 const breakpoints = computed(() => ({
-  0: { slidesPerView: 1, spaceBetween: 10 },
-  768: { slidesPerView: 2, spaceBetween: 10 },
-  1024: { slidesPerView: 3, spaceBetween: 20 },
-  1280: { slidesPerView: props.slidesPerView, spaceBetween: props.spaceBetween }
+  0: {
+    slidesPerView: Math.min(1, props.slidesPerView),
+    spaceBetween: Math.min(10, props.spaceBetween)
+  },
+  768: {
+    slidesPerView: Math.min(2, props.slidesPerView),
+    spaceBetween: Math.min(10, props.spaceBetween)
+  },
+  1024: {
+    slidesPerView: Math.min(3, props.slidesPerView),
+    spaceBetween: Math.min(20, props.spaceBetween)
+  },
+  1280: {
+    slidesPerView: Math.min(5, props.slidesPerView),
+    spaceBetween: Math.min(30, props.spaceBetween)
+  },
+  1536: { slidesPerView: props.slidesPerView, spaceBetween: props.spaceBetween }
 }))
 </script>
 <template>

@@ -32,10 +32,10 @@ defineProps<{
   @apply grid sm:grid-cols-5 grid-cols-3 gap-4 p-6 items-center bg-gray-900 border border-gray-800 rounded-lg;
 
   .col1 {
-    @apply col-span-1 border-r;
+    @apply col-span-1 border-r hidden sm:flex;
   }
   .col2 {
-    @apply col-span-2 flex-col font-medium text-sm;
+    @apply col-span-2 flex-col hidden sm:flex font-medium text-sm;
   }
   .col3 {
     @apply sm:col-span-2 col-span-3 flex justify-end font-medium text-sm;
