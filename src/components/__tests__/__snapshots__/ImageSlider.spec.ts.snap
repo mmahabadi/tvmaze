@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ImageSlider > renders correctly 1`] = `
-"<div class="swiper swiper-initialized swiper-horizontal w-full -mt-24 h-[44rem]" style="--swiper-navigation-color: var(--primary-color); --swiper-pagination-color: var(--primary-color);" lazy="true">
+"<div class="swiper swiper-initialized swiper-horizontal w-full -mt-24 h-[44rem]" style="--swiper-navigation-color: var(--primary-color); --swiper-pagination-color: var(--primary-color);" lazy="true" data-textid="slider">
   <div class="swiper-wrapper" style="transition-duration: 0ms; transition-delay: 0ms; transform: translate3d(NaNpx, 0px, 0px);"></div>
   <!---->
   <!---->

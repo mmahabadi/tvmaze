@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`DetailsPoster > renders correctly 1`] = `
-"<div data-v-0f6e4b97="" class="poster-container"><img data-v-0f6e4b97="" src="https://static.tvmaze.com/uploads/images/original_untouched/4/11308.jpg" alt="Gilmore Girls" class="w-full h-full object-cover large-image">
+"<div data-v-0f6e4b97="" data-testid="poster" class="poster-container"><img data-v-0f6e4b97="" src="https://static.tvmaze.com/uploads/images/original_untouched/4/11308.jpg" alt="Gilmore Girls" class="w-full h-full object-cover large-image">
   <div data-v-0f6e4b97="" class="overlay">
     <div data-v-0f6e4b97="" class="container">
-      <div data-v-0f6e4b97="" class="image-content"><img data-v-0f6e4b97="" src="https://static.tvmaze.com/uploads/images/medium_portrait/4/11308.jpg" alt="Gilmore Girls" class="w-full h-full object-cover thumbnail"></div>
+      <div data-v-0f6e4b97="" data-testid="thumbnail" class="image-content"><img data-v-0f6e4b97="" src="https://static.tvmaze.com/uploads/images/medium_portrait/4/11308.jpg" alt="Gilmore Girls" class="w-full h-full object-cover thumbnail"></div>
       <div data-v-0f6e4b97="" class="main-content">
         <div data-v-0f6e4b97="" class="inner-container">
           <h1 data-v-0f6e4b97="" class="title">Gilmore Girls</h1>

@@ -17,11 +17,11 @@ const year = computed(() => {
 const sanitizedSummary = computed(() => DOMPurify.sanitize(item.summary))
 </script>
 <template>
-  <div class="poster-container">
+  <div data-testid="poster" class="poster-container">
     <Image :src="item.image?.original" :alt="item.name" class="large-image" />
     <div class="overlay">
       <div class="container">
-        <div class="image-content">
+        <div data-testid="thumbnail" class="image-content">
           <Image :src="item.image?.medium" :alt="item.name" class="thumbnail" />
         </div>
         <div class="main-content">

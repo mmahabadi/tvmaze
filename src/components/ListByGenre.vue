@@ -19,8 +19,10 @@ const slideItems = computed<SlideItem[]>(() =>
 )
 </script>
 <template>
-  <SectionTitle :title="genre">
-    <IconScreen />
-  </SectionTitle>
-  <ThumbnailSwiper :loading="!!genreShow?.loading" :slidesPerView="7" :slides="slideItems" />
+  <div data-testid="list-by-genre">
+    <SectionTitle :title="genre">
+      <IconScreen />
+    </SectionTitle>
+    <ThumbnailSwiper :loading="!!genreShow?.loading" :slidesPerView="7" :slides="slideItems" />
+  </div>
 </template>
