@@ -13,8 +13,8 @@ import 'swiper/css/scrollbar'
 const props = defineProps<Partial<SwiperOptions>>()
 
 const swiperStyle = {
-  '--swiper-navigation-color': 'rgb(20 184 166 / var(--tw-text-opacity))',
-  '--swiper-pagination-color': 'rgb(20 184 166 / var(--tw-text-opacity))'
+  '--swiper-navigation-color': 'var(--primary-color)',
+  '--swiper-pagination-color': 'var(--primary-color)'
 }
 const swiperOptions = computed(() => ({
   ...props

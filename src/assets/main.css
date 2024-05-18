@@ -4,10 +4,10 @@
 
 :root {
   --primary-color: #15b8a6;
-  --text-color: #fff;
+  --primary-color-dark: #0f766e;
   --bg-color: #000;
-  --color-gray: rgb(16 24 39);
 }
+
 html,
 body,
 #app {

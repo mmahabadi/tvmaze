@@ -26,7 +26,10 @@ defineProps<{ item: SlideItem }>()
   @apply p-4 border cursor-pointer rounded-lg overflow-hidden;
 
   RouterLink {
-    @apply hover:text-teal-500 transition text-white flex justify-center items-center;
+    @apply transition text-white flex justify-center items-center;
+    &:hover {
+      color: var(--primary-color);
+    }
   }
   .t-image {
     @apply w-full h-full min-h-44 object-cover rounded-lg;
@@ -35,10 +38,17 @@ defineProps<{ item: SlideItem }>()
     @apply px-4 gap-6 text-center absolute hover:bg-black hover:bg-opacity-70 top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center transition duration-300 ease-in-out opacity-0 hover:opacity-100;
 
     .item-button {
-      @apply w-12 h-12 flex justify-center items-center transition hover:bg-teal-500 rounded-full bg-white bg-opacity-30 text-white;
+      @apply w-12 h-12 flex justify-center items-center transition rounded-full bg-white bg-opacity-30 text-white;
+      &:hover {
+        background-color: var(--primary-color-dark);
+      }
     }
     .title {
       @apply font-semibold w-full text-xl truncate overflow-hidden line-clamp-2;
+    }
+
+    &:hover .item-button {
+      background-color: var(--primary-color);
     }
   }
 }
