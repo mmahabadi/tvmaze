@@ -2,7 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { type SlideItem } from '@/types'
 import RatingStar from '@/@ui/components/RatingStar.vue'
-import IconPlay from '../icons/IconPlay.vue'
+import IconPlay from '@/@ui/components/icons/IconPlay.vue'
 import Image from '@/@ui/components/Image.vue'
 
 defineProps<{ item: SlideItem }>()

@@ -3,7 +3,7 @@ import { mount, RouterLinkStub, VueWrapper } from '@vue/test-utils'
 import ThumbnailItem from '../thumbnail/ThumbnailItem.vue'
 import { type SlideItem } from '@/types'
 import RatingStar from '@/@ui/components/RatingStar.vue'
-import IconPlay from '@/components/icons/IconPlay.vue'
+import IconPlay from '@/@ui/components/icons/IconPlay.vue'
 import Image from '@/@ui/components/Image.vue'
 
 describe('ThumbnailItem', () => {

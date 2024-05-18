@@ -3,7 +3,7 @@ import { mount, RouterLinkStub, VueWrapper } from '@vue/test-utils'
 import SliderItem from '../slider/SliderItem.vue'
 import DateIcon from '@/@ui/components/icons/CalendarIcon.vue'
 import ClockIcon from '@/@ui/components/icons/ClockIcon.vue'
-import IconPlay from '@/components/icons/IconPlay.vue'
+import IconPlay from '@/@ui/components/icons/IconPlay.vue'
 import Image from '@/@ui/components/Image.vue'
 
 describe('SliderImage', () => {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { type Movie } from '@/types'
-import IconPlay from '@/components/icons/IconPlay.vue'
+import IconPlay from '@/@ui/components/icons/IconPlay.vue'
 import Image from '@/@ui/components/Image.vue'
 
 type propType = Pick<Movie, 'name' | 'id'> & {

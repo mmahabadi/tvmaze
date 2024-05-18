@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { mount, RouterLinkStub, VueWrapper } from '@vue/test-utils'
 import ShowItem from '../ShowItem.vue'
-import IconPlay from '@/components/icons/IconPlay.vue'
+import IconPlay from '@/@ui/components/icons/IconPlay.vue'
 import Image from '@/@ui/components/Image.vue'
 
 describe('ShowItem.vue', () => {

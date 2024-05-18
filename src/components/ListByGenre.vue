@@ -3,7 +3,7 @@ import { computed, defineProps, inject } from 'vue'
 import { useMoviesStore } from '@/stores/movies'
 import SectionTitle from '@/@ui/components/SectionTitle.vue'
 import ThumbnailSwiper from '@/components/thumbnail/ThumbnailSwiper.vue'
-import IconScreen from '@/components/icons/IconScreen.vue'
+import IconScreen from '@/@ui/components/icons/IconScreen.vue'
 import type { AppSettings, SlideItem } from '@/types'
 import { mapToSlideItems } from '@/utils/mapping'
 

@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import DateIcon from '@/@ui/components/icons/CalendarIcon.vue'
 import ClockIcon from '@/@ui/components/icons/ClockIcon.vue'
-import IconPlay from '@/components/icons/IconPlay.vue'
+import IconPlay from '@/@ui/components/icons/IconPlay.vue'
 import { RouterLink } from 'vue-router'
 import Image from '@/@ui/components/Image.vue'
 
