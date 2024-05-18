@@ -46,12 +46,11 @@ const searchHandler = () => {
 </script>
 <template>
   <form @submit.prevent="searchHandler">
-  <SearchInput
-    v-model="searchQuery"
-    :loading="store.loading"
-    :results="results"
-    @search="searchHandler"
-  />
+    <SearchInput
+      v-model="searchQuery"
+      :loading="store.loading"
+      :results="results"
+      @search="searchHandler"
+    />
   </form>
 </template>
-<style scoped></style>

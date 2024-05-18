@@ -100,7 +100,6 @@ const searchHandler = () => {
       }
     }
   }
-  &:hover .dropdown,
   &:focus-within .dropdown,
   &:active .dropdown {
     @apply block;

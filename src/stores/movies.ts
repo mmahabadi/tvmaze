@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
-import { computed, ref, type ComputedRef } from 'vue'
+import { computed, inject, ref, type ComputedRef } from 'vue'
 import * as ApiService from '@/services/ApiService'
-import { type Movie, type ShowByGenre } from '@/types'
+import { type AppSettings, type Movie, type ShowByGenre } from '@/types'
 
 export const useMoviesStore = defineStore('movies', () => {
   const shows = ref<Map<string, ShowByGenre>>(new Map())
@@ -9,9 +9,11 @@ export const useMoviesStore = defineStore('movies', () => {
   const loading = ref(false)
   const error = ref<null | Error>(null)
   const currentIndex = ref(1)
-  const ITEMS_PER_PAGE = 3
-  const ITEMS_LIMIT_FOR_RECENT_MOVIES = 15
-  const DATE_LIMIT_FOR_RECENT_MOVIES = 2020
+  const appSettings = inject<AppSettings>('appSettings')
+  const ITEMS_PER_PAGE = appSettings?.itemsInEachPage || 3
+  const ITEMS_LIMIT_FOR_RECENT_MOVIES = appSettings?.itemsToShowInHomePageSlider || 15
+  const DATE_LIMIT_FOR_RECENT_MOVIES =
+    appSettings?.yearLimitToConsiderAsRecentToShowInHomePageSlider || 2020
 
   const recentMovies = computed(() =>
     movies.value

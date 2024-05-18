@@ -1,3 +1,10 @@
+export type AppSettings = {
+  itemsInEachGenreSection: number
+  itemsInEachPage: number
+  itemsToShowInHomePageSlider: number
+  yearLimitToConsiderAsRecentToShowInHomePageSlider: number
+}
+
 export type Rating = {
   average: number
 }

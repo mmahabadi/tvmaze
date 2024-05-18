@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { computed, defineProps } from 'vue'
+import { computed, defineProps, inject } from 'vue'
 import { useMoviesStore } from '@/stores/movies'
 import SectionTitle from '@/@ui/components/SectionTitle.vue'
 import ThumbnailSwiper from '@/components/thumbnail/ThumbnailSwiper.vue'
 import IconScreen from '@/components/icons/IconScreen.vue'
-import { type SlideItem } from '@/types'
+import type { AppSettings, SlideItem } from '@/types'
 import { mapToSlideItems } from '@/utils/mapping'
 
 const { genre } = defineProps<{
   genre: string
 }>()
-const LIMIT = 20
+const appSettings = inject<AppSettings>('appSettings')
+const LIMIT = appSettings?.itemsInEachGenreSection || 20
 const store = useMoviesStore()
 const genreShow = computed(() => store.getByGenre(genre))
 const slideItems = computed<SlideItem[]>(() =>

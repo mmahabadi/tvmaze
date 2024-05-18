@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Image > renders correctly 1`] = `"<img class="w-full h-full object-cover" src="/src/assets/image-placeholder.jpg" alt="image-placeholder">"`;

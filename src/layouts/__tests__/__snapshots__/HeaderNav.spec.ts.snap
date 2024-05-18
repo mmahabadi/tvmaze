@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HeaderNav > renders correctly 1`] = `
+"<a data-v-1dc335c6="" class="nav-item" href="">Shows</a>
+<a data-v-1dc335c6="" class="nav-item" href="">About Us</a>
+<a data-v-1dc335c6="" class="nav-item" href="">Contact Us</a>"
+`;
