@@ -4,7 +4,7 @@ import SwiperWrapper from '@/@ui/components/SwiperWrapper.vue'
 import { type Person } from '@/types'
 import { type SwiperOptions } from '@/@ui/types'
 import CastItem from './CastItem.vue'
-import UserIcon from '@/@ui/components/icons/UsersIcon.vue'
+import UsersIcon from '@/@ui/components/icons/UsersIcon.vue'
 import SectionTitle from '@/@ui/components/SectionTitle.vue'
 
 defineProps<{ slides: Person[] }>()
@@ -21,11 +21,11 @@ const options = {
 <template>
   <div class="mb-12" v-if="slides.length > 0">
     <SectionTitle title="Casts">
-      <UserIcon />
+      <UsersIcon />
     </SectionTitle>
     <SwiperWrapper v-bind="options">
-      <swiper-slide v-for="slide in slides" :key="slide.id">
-        <CastItem :item="slide" />
+      <swiper-slide v-for="item in slides" :key="item.id">
+        <CastItem :image="item.image?.medium" :name="item.name" />
       </swiper-slide>
     </SwiperWrapper>
   </div>

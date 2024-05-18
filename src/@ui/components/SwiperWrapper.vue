@@ -13,17 +13,38 @@ import 'swiper/css/scrollbar'
 const props = defineProps<Partial<SwiperOptions>>()
 
 const swiperStyle = {
-  '--swiper-navigation-color': 'rgb(20 184 166 / var(--tw-text-opacity))',
-  '--swiper-pagination-color': 'rgb(20 184 166 / var(--tw-text-opacity))'
+  '--swiper-navigation-color': 'var(--primary-color)',
+  '--swiper-pagination-color': 'var(--primary-color)'
 }
 const swiperOptions = computed(() => ({
   ...props
 }))
+
+const convertToInt = (prop: number | undefined) => {
+  return +(prop ?? 0)
+}
+
 const breakpoints = computed(() => ({
-  0: { slidesPerView: 1, spaceBetween: 10 },
-  768: { slidesPerView: 2, spaceBetween: 10 },
-  1024: { slidesPerView: 3, spaceBetween: 20 },
-  1280: { slidesPerView: props.slidesPerView, spaceBetween: props.spaceBetween }
+  0: {
+    slidesPerView: Math.min(1, convertToInt(props.slidesPerView)),
+    spaceBetween: Math.min(10, convertToInt(props.spaceBetween))
+  },
+  768: {
+    slidesPerView: Math.min(2, convertToInt(props.slidesPerView)),
+    spaceBetween: Math.min(10, convertToInt(props.spaceBetween))
+  },
+  1024: {
+    slidesPerView: Math.min(3, convertToInt(props.slidesPerView)),
+    spaceBetween: Math.min(20, convertToInt(props.spaceBetween))
+  },
+  1280: {
+    slidesPerView: Math.min(5, convertToInt(props.slidesPerView)),
+    spaceBetween: Math.min(30, convertToInt(props.spaceBetween))
+  },
+  1536: {
+    slidesPerView: convertToInt(props.slidesPerView),
+    spaceBetween: convertToInt(props.spaceBetween)
+  }
 }))
 </script>
 <template>

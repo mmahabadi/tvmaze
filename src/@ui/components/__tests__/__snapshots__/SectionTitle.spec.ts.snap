@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SectionTitle > renders correctly 1`] = `
+"<div data-v-ac9d2fca="" class="my-9">
+  <div data-v-ac9d2fca="" class="title-section">
+    <div data-v-ac9d2fca="" class="icon"></div>
+    <h2 data-v-ac9d2fca="" class="title">Top Rated Movies</h2>
+  </div>
+</div>"
+`;

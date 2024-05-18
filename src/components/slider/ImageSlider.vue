@@ -24,7 +24,7 @@ const options = {
 } as SwiperOptions
 </script>
 <template>
-  <SwiperWrapper v-bind="options" class="w-full -mt-24 h-[44rem]">
+  <SwiperWrapper data-textid="slider" v-bind="options" class="w-full -mt-24 h-[44rem]">
     <swiper-slide v-for="item in recentMovies" :key="item.id">
       <SliderItem
         :id="item.id"

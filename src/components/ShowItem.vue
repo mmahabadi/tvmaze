@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { type Movie } from '@/types'
-import IconPlay from '@/components/icons/IconPlay.vue'
+import IconPlay from '@/@ui/components/icons/IconPlay.vue'
 import Image from '@/@ui/components/Image.vue'
 
 type propType = Pick<Movie, 'name' | 'id'> & {
@@ -39,9 +39,8 @@ defineProps<propType>()
     }
 
     button {
-      @apply flex justify-center items-center text-xs transform duration-150 bg-white bg-opacity-20 rounded-md w-8 h-8;
+      @apply flex justify-center items-center text-xs text-white transform duration-150 bg-white bg-opacity-20 rounded-md w-8 h-8;
       border: 2px solid var(--primary-color);
-      color: var(--text-color);
     }
   }
 

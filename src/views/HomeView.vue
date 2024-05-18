@@ -7,11 +7,10 @@ import ListByGenre from '@/components/ListByGenre.vue'
 
 const store = useMoviesStore()
 
-//TODO: add error handling
 onMounted(() => {
   document.addEventListener('scroll', handleScroll)
 
-  if (store.genres.length === 0) {
+  if (store?.genres?.length === 0) {
     store.fetchMovies()
   }
 })
@@ -29,11 +28,11 @@ const handleScroll = () => {
 </script>
 
 <template>
-  <MainLayout :loading="store.loading">
+  <MainLayout :loading="!!store?.loading">
     <template v-slot:slider>
       <ImageSlider />
     </template>
-    <div v-for="genre in store.genres" :key="genre">
+    <div v-for="genre in store?.genres" :key="genre">
       <ListByGenre :genre="genre" />
     </div>
   </MainLayout>

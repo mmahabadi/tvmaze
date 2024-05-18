@@ -7,8 +7,19 @@ export default mergeConfig(
   defineConfig({
     test: {
       environment: 'jsdom',
-      exclude: [...configDefaults.exclude, 'e2e/**'],
-      root: fileURLToPath(new URL('./', import.meta.url))
+      exclude: [...configDefaults.exclude, 'e2e/**', 'playwright-report/**'],
+      root: fileURLToPath(new URL('./', import.meta.url)),
+      coverage: {
+        provider: 'istanbul', // or 'v8'
+        exclude: [
+          '**/node_modules/**',
+          'playwright-report/**',
+          'e2e/**',
+          '**.cjs',
+          '**.config.**',
+          'src/main.ts'
+        ]
+      }
     }
   })
 )

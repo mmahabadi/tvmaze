@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { type Person } from '@/types'
+import { type CastItemProps } from '@/types'
 import Image from '@/@ui/components/Image.vue'
 
-defineProps<{ item: Person }>()
+defineProps<CastItemProps>()
 </script>
 <template>
   <div class="cast-item">
-    <Image :src="item.image?.medium" :alt="item.name" class="img" />
-    <p class="text-center">{{ item.name }}</p>
+    <Image :src="image" :alt="name" class="img" />
+    <p class="text-center">{{ name }}</p>
   </div>
 </template>
 <style scoped>

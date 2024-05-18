@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import DateIcon from '@/@ui/components/icons/CalendarIcon.vue'
 import ClockIcon from '@/@ui/components/icons/ClockIcon.vue'
-import IconPlay from '@/components/icons/IconPlay.vue'
+import IconPlay from '@/@ui/components/icons/IconPlay.vue'
 import { RouterLink } from 'vue-router'
 import Image from '@/@ui/components/Image.vue'
 
@@ -29,10 +29,10 @@ const year = computed(() => new Date(endDate).getFullYear())
           <span class="info-text">{{ genre }}</span>
         </div>
         <div class="info-part">
-          <DateIcon class="text-teal-500" /><span class="info-text">{{ year }}</span>
+          <DateIcon class="theme-color" /><span class="info-text">{{ year }}</span>
         </div>
         <div class="info-part">
-          <ClockIcon class="text-teal-500" /><span class="info-text">{{ rating }}hr</span>
+          <ClockIcon class="theme-color" /><span class="info-text">{{ rating }}hr</span>
         </div>
       </div>
       <div class="info-section">
@@ -46,6 +46,9 @@ const year = computed(() => new Date(endDate).getFullYear())
   </div>
 </template>
 <style scoped>
+.theme-color {
+  color: var(--primary-color);
+}
 .swiper-slide-next .details,
 .watch-button:hover .animate-ping {
   opacity: 100;
@@ -64,7 +67,11 @@ const year = computed(() => new Date(endDate).getFullYear())
   }
 
   .watch-button {
-    @apply bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded inline-flex items-center;
+    @apply text-white font-bold py-2 px-4 rounded inline-flex items-center;
+    background-color: var(--primary-color);
+    &:hover {
+      background-color: var(--primary-color-dark);
+    }
   }
 
   .info-section {

@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HeaderSearch > renders correctly 1`] = `
+"<form>
+  <search-input-stub modelvalue="" results="[object Object]" loading="false"></search-input-stub>
+</form>"
+`;
