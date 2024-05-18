@@ -17,20 +17,20 @@ describe('Router', () => {
     const route = routerInstance.resolve('/')
     expect(route.name).toBe('home')
     expect(route.matched.length).toBe(1)
-    expect(route.matched[0].components.default).toBe(HomeView)
+    expect((route.matched[0].components as any).default).toBe(HomeView)
   })
 
   it('should have a details route', () => {
     const route = routerInstance.resolve('/details/1')
     expect(route.name).toBe('details')
     expect(route.matched.length).toBe(1)
-    expect(route.matched[0].components.default).toBeInstanceOf(Function) // lazy component
+    expect((route.matched[0].components as any).default).toBeInstanceOf(Function) // lazy component
   })
 
   it('should have a search route', () => {
     const route = routerInstance.resolve('/search')
     expect(route.name).toBe('search')
     expect(route.matched.length).toBe(1)
-    expect(route.matched[0].components.default).toBeInstanceOf(Function) // lazy component
+    expect((route.matched[0].components as any).default).toBeInstanceOf(Function) // lazy component
   })
 })

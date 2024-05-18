@@ -7,15 +7,14 @@ import IconPlay from '@/components/icons/IconPlay.vue'
 import Image from '@/@ui/components/Image.vue'
 
 describe('SliderImage', () => {
-  let wrapper: VueWrapper<SliderItem>
+  let wrapper: VueWrapper<unknown>
   const props = {
-    title: 'The Simpsons',
-    genres: 'Animation, Comedy',
-    year: '1989',
-    time: '20:00',
-    days: 'Monday',
-    status: 'Running',
-    image: 'https://image.tmdb.org/t/p/original/2IWouZK4gkgHhJa3oyYuS5f2n3l.jpg'
+    id: 1,
+    name: 'The Simpsons',
+    image: 'The Simpsons.jpg',
+    endDate: '1989',
+    rating: 8.7,
+    genre: 'Animation'
   }
 
   beforeEach(() => {

@@ -5,7 +5,7 @@ import StarIconOutline from '../icons/StarIconOutline.vue'
 import StarIcon from '../icons/StarIcon.vue'
 
 describe('RatingStar', () => {
-  let wrapper: VueWrapper<any>
+  let wrapper: VueWrapper<unknown>
   const props = { rating: 7 }
 
   beforeEach(() => {

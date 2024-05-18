@@ -16,7 +16,7 @@ const mockRoute = {
 }
 
 describe('DetailsView', () => {
-  let wrapper: VueWrapper<DetailsView>
+  let wrapper: VueWrapper<unknown>
   let fetchDetailsSpy: MockInstance<[id: number], Promise<void>>
 
   beforeEach(() => {

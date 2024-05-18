@@ -8,7 +8,7 @@ import LayoutFooter from '@/layouts/components/LayoutFooter.vue'
 import Loading from '@/@ui/components/LoadingOverlay.vue'
 
 describe('MainLayout', () => {
-  let wrapper: VueWrapper<MainLayout>
+  let wrapper: VueWrapper<unknown>
 
   beforeEach(() => {
     wrapper = mount(MainLayout, {

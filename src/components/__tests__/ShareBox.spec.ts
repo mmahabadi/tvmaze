@@ -5,7 +5,7 @@ import ShareIcon from '@/@ui/components/icons/ShareIcon.vue'
 import IconPlay from '@/components/icons/IconPlay.vue'
 
 describe('DetailsPoster', () => {
-  let wrapper: VueWrapper<ShareBox>
+  let wrapper: VueWrapper<unknown>
 
   beforeEach(() => {
     wrapper = mount(ShareBox, {

@@ -18,12 +18,6 @@ exports[`CastSwiper.vue > renders correctly 1`] = `
         </div>
         <!---->
       </div>
-      <div class="swiper-slide">
-        <div data-v-6563c4e7="" class="cast-item"><img data-v-6563c4e7="" src="image2.jpg" alt="Person 2" class="w-full h-full object-cover img">
-          <p data-v-6563c4e7="" class="text-center">Person 2</p>
-        </div>
-        <!---->
-      </div>
     </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>

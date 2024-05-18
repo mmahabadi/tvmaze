@@ -1,9 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ThumbnailSwiper > renders correctly 1`] = `
-"<div items="[object Object]">
+"<div>
   <div class="swiper swiper-initialized swiper-horizontal" style="--swiper-navigation-color: rgb(20 184 166 / var(--tw-text-opacity)); --swiper-pagination-color: rgb(20 184 166 / var(--tw-text-opacity));" lazy="false">
-    <div class="swiper-wrapper" style="transition-duration: 0ms; transition-delay: 0ms; transform: translate3d(NaNpx, 0px, 0px);"></div>
+    <div class="swiper-wrapper" style="transition-duration: 0ms; transition-delay: 0ms; transform: translate3d(NaNpx, 0px, 0px);">
+      <div class="swiper-slide">
+        <thumbnail-item-stub item="[object Object]"></thumbnail-item-stub>
+        <!---->
+      </div>
+    </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
     <!---->

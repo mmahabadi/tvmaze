@@ -7,7 +7,7 @@ import { createPinia, setActivePinia } from 'pinia'
 import { provide } from 'vue'
 
 describe('ListByGenre', () => {
-  let wrapper: VueWrapper<ListByGenre>
+  let wrapper: VueWrapper<unknown>
   provide('appSettings', {
     itemsInEachGenreSection: 20
   })

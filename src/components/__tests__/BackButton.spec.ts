@@ -3,7 +3,7 @@ import { mount, VueWrapper } from '@vue/test-utils'
 import BackButton from '../details/BackButton.vue'
 
 describe('BackButton', () => {
-  let wrapper: VueWrapper<BackButton>
+  let wrapper: VueWrapper<unknown>
 
   beforeEach(() => {
     wrapper = mount(BackButton)

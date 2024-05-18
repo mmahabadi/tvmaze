@@ -3,7 +3,7 @@ import { describe, expect, beforeEach, it } from 'vitest'
 import HeaderLogo from '@/layouts/components/header/HeaderLogo.vue'
 
 describe('HeaderLogo', () => {
-  let wrapper: VueWrapper<HeaderLogo>
+  let wrapper: VueWrapper<unknown>
 
   beforeEach(() => {
     wrapper = mount(HeaderLogo, {

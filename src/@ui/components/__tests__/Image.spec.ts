@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import Image from '../Image.vue'
 
 describe('Image', () => {
-  let wrapper: VueWrapper<Image>
+  let wrapper: VueWrapper<unknown>
   const props = { src: 'inception.jpg', alt: 'Inception' }
 
   beforeEach(() => {

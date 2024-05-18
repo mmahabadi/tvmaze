@@ -5,7 +5,7 @@ import IconPlay from '@/components/icons/IconPlay.vue'
 import Image from '@/@ui/components/Image.vue'
 
 describe('ShowItem.vue', () => {
-  let wrapper: VueWrapper<ShowItem>
+  let wrapper: VueWrapper<unknown>
   const props = {
     id: 1,
     name: 'Inception',

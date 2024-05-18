@@ -8,7 +8,7 @@ import ShareBox from '../details/ShareBox.vue'
 import type { Movie } from '@/types'
 
 describe('DetailsPoster', () => {
-  let wrapper: VueWrapper<DetailsPoster>
+  let wrapper: VueWrapper<unknown>
   const props = {
     item: {
       id: 525,

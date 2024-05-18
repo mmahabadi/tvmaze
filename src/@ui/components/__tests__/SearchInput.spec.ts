@@ -5,7 +5,7 @@ import SearchIcon from '../icons/SearchIcon.vue'
 import SpinnerIcon from '../icons/SpinnerIcon.vue'
 
 describe('SearchInput', () => {
-  let wrapper: VueWrapper<SearchInput>
+  let wrapper: VueWrapper<unknown>
   const props = {
     modelValue: '',
     loading: false,
@@ -46,7 +46,7 @@ describe('SearchInput', () => {
     const input = wrapper.find('input[type="text"]')
 
     // Assert
-    expect(input.element.value).toBe('Inception')
+    expect((input.element as any).value).toBe('Inception')
   })
 
   it('emits update:modelValue event when input value changes', async () => {

@@ -6,21 +6,22 @@ import SwiperWrapper from '@/@ui/components/SwiperWrapper.vue'
 import CastItem from '../casts/CastItem.vue'
 import UsersIcon from '@/@ui/components/icons/UsersIcon.vue'
 import SectionTitle from '@/@ui/components/SectionTitle.vue'
+import { type Image, type Person } from '@/types'
 
 describe('CastSwiper.vue', () => {
-  let wrapper: VueWrapper<CastSwiper>
+  let wrapper: VueWrapper<unknown>
   const props = {
     slides: [
       {
         id: 1,
         name: 'Person 1',
-        image: { medium: 'image1.jpg' }
-      },
-      {
-        id: 2,
-        name: 'Person 2',
-        image: { medium: 'image2.jpg' }
-      }
+        image: { medium: 'image1.jpg', original: 'image1.jpg' } as Image,
+        url: ' ',
+        country: ' ',
+        birthday: '',
+        gender: '',
+        deathday: null
+      } as unknown as Person
     ]
   }
 

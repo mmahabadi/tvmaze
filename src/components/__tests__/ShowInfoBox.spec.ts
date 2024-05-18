@@ -4,7 +4,7 @@ import ShowInfoBox from '../details/ShowInfoBox.vue'
 import CalendarIcon from '@/@ui/components/icons/CalendarIcon.vue'
 import ClockIcon from '@/@ui/components/icons/ClockIcon.vue'
 describe('ShowInfoBox', () => {
-  let wrapper: VueWrapper<ShowInfoBox>
+  let wrapper: VueWrapper<unknown>
 
   beforeEach(() => {
     const props = {

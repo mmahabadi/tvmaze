@@ -3,7 +3,7 @@ import { beforeEach, describe, it, expect } from 'vitest'
 import SectionTitle from '../SectionTitle.vue'
 
 describe('SectionTitle', () => {
-  let wrapper: VueWrapper<SectionTitle>
+  let wrapper: VueWrapper<unknown>
   const props = { title: 'Top Rated Movies' }
 
   beforeEach(() => {

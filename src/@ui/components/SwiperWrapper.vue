@@ -19,24 +19,32 @@ const swiperStyle = {
 const swiperOptions = computed(() => ({
   ...props
 }))
+
+const convertToInt = (prop: number | undefined) => {
+  return +(prop ?? 0)
+}
+
 const breakpoints = computed(() => ({
   0: {
-    slidesPerView: Math.min(1, props.slidesPerView),
-    spaceBetween: Math.min(10, props.spaceBetween)
+    slidesPerView: Math.min(1, convertToInt(props.slidesPerView)),
+    spaceBetween: Math.min(10, convertToInt(props.spaceBetween))
   },
   768: {
-    slidesPerView: Math.min(2, props.slidesPerView),
-    spaceBetween: Math.min(10, props.spaceBetween)
+    slidesPerView: Math.min(2, convertToInt(props.slidesPerView)),
+    spaceBetween: Math.min(10, convertToInt(props.spaceBetween))
   },
   1024: {
-    slidesPerView: Math.min(3, props.slidesPerView),
-    spaceBetween: Math.min(20, props.spaceBetween)
+    slidesPerView: Math.min(3, convertToInt(props.slidesPerView)),
+    spaceBetween: Math.min(20, convertToInt(props.spaceBetween))
   },
   1280: {
-    slidesPerView: Math.min(5, props.slidesPerView),
-    spaceBetween: Math.min(30, props.spaceBetween)
+    slidesPerView: Math.min(5, convertToInt(props.slidesPerView)),
+    spaceBetween: Math.min(30, convertToInt(props.spaceBetween))
   },
-  1536: { slidesPerView: props.slidesPerView, spaceBetween: props.spaceBetween }
+  1536: {
+    slidesPerView: convertToInt(props.slidesPerView),
+    spaceBetween: convertToInt(props.spaceBetween)
+  }
 }))
 </script>
 <template>

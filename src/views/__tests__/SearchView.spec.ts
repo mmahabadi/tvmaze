@@ -19,7 +19,7 @@ const mockRoute = {
 }
 
 describe('SearchView', () => {
-  let wrapper: VueWrapper<SearchView>
+  let wrapper: VueWrapper<unknown>
   let fetchShowsSpy: MockInstance<[q: string], Promise<void>>
 
   beforeEach(() => {

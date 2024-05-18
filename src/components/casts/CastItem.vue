@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { type Person } from '@/types'
+import { type CastItemProps } from '@/types'
 import Image from '@/@ui/components/Image.vue'
 
-type propType = Pick<Person, 'name' | 'image'>
-
-defineProps<propType>()
+defineProps<CastItemProps>()
 </script>
 <template>
   <div class="cast-item">

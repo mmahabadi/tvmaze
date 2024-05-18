@@ -6,7 +6,7 @@ import SwiperWrapper from '@/@ui/components/SwiperWrapper.vue'
 import { createPinia, setActivePinia } from 'pinia'
 
 describe('ImageSlider', () => {
-  let wrapper: VueWrapper<ImageSlider>
+  let wrapper: VueWrapper<unknown>
 
   beforeEach(() => {
     setActivePinia(createPinia())

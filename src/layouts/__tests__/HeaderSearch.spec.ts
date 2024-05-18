@@ -13,7 +13,7 @@ vi.mock('vue-router', () => ({
 }))
 
 describe('HeaderSearch', () => {
-  let wrapper: VueWrapper<HeaderSearch>
+  let wrapper: VueWrapper<unknown>
 
   beforeEach(() => {
     setActivePinia(createPinia())

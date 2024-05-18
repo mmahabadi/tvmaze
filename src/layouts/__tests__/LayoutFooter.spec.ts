@@ -3,7 +3,7 @@ import { describe, expect, beforeEach, it } from 'vitest'
 import LayoutFooter from '@/layouts/components/LayoutFooter.vue'
 
 describe('LayoutFooter', () => {
-  let wrapper: VueWrapper<LayoutFooter>
+  let wrapper: VueWrapper<unknown>
 
   beforeEach(() => {
     wrapper = mount(LayoutFooter)

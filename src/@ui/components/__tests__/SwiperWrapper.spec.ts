@@ -4,7 +4,7 @@ import SwiperWrapper from '../SwiperWrapper.vue'
 import type { SwiperOptions } from '@/@ui/types'
 
 describe('SwiperWrapper', () => {
-  let wrapper: VueWrapper<SwiperWrapper>
+  let wrapper: VueWrapper<unknown>
   const props = {
     slidesPerView: 4,
     spaceBetween: 50

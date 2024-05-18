@@ -3,13 +3,14 @@ import { mount, VueWrapper } from '@vue/test-utils'
 import { SwiperSlide } from 'swiper/vue'
 import ThumbnailSwiper from '../thumbnail/ThumbnailSwiper.vue'
 import SwiperWrapper from '@/@ui/components/SwiperWrapper.vue'
-import ThumbnailItem from '../thumbnail/ThumbnailItem.vue'
 import { type SlideItem } from '@/types'
 
 describe('ThumbnailSwiper', () => {
-  let wrapper: VueWrapper<ThumbnailSwiper>
+  let wrapper: VueWrapper<unknown>
   const props = {
-    items: [
+    loading: false,
+    slidesPerView: 4,
+    slides: [
       {
         id: 1,
         name: 'Inception',
@@ -23,10 +24,10 @@ describe('ThumbnailSwiper', () => {
     wrapper = mount(ThumbnailSwiper, {
       props,
       global: {
-        components: {
+        stubs: {
           SwiperSlide,
           SwiperWrapper,
-          ThumbnailItem
+          ThumbnailItem: true
         }
       }
     })

@@ -3,8 +3,8 @@ import { mount, VueWrapper } from '@vue/test-utils'
 import CastItem from '../casts/CastItem.vue'
 import Image from '@/@ui/components/Image.vue'
 
-describe('Component', () => {
-  let wrapper: VueWrapper<CastItem>
+describe('CastItem', () => {
+  let wrapper: VueWrapper<unknown>
   const props = {
     name: 'Mohsen',
     image: 'mohsen.jpg'

@@ -1,5 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`CastItem > renders correctly 1`] = `
+"<div data-v-6563c4e7="" class="cast-item"><img data-v-6563c4e7="" src="mohsen.jpg" alt="Mohsen" class="w-full h-full object-cover img">
+  <p data-v-6563c4e7="" class="text-center">Mohsen</p>
+</div>"
+`;
+
 exports[`Component > renders correctly 1`] = `
 "<div data-v-6563c4e7="" class="cast-item"><img data-v-6563c4e7="" src="mohsen.jpg" alt="Mohsen" class="w-full h-full object-cover img">
   <p data-v-6563c4e7="" class="text-center">Mohsen</p>

@@ -3,7 +3,7 @@ import { describe, expect, beforeEach, it } from 'vitest'
 import HeaderNav from '@/layouts/components/header/HeaderNav.vue'
 
 describe('HeaderNav', () => {
-  let wrapper: VueWrapper<HeaderNav>
+  let wrapper: VueWrapper<unknown>
 
   beforeEach(() => {
     wrapper = mount(HeaderNav)

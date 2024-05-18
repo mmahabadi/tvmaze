@@ -1,19 +1,19 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SliderImage > renders correctly 1`] = `
-"<img data-v-1e279afe="" src="https://image.tmdb.org/t/p/original/2IWouZK4gkgHhJa3oyYuS5f2n3l.jpg" alt="poster" class="w-full h-full object-cover poster">
+"<img data-v-1e279afe="" src="The Simpsons.jpg" alt="poster" class="w-full h-full object-cover poster">
 <div data-v-1e279afe="" class="bg-overlay">
   <div data-v-1e279afe="" class="details">
-    <h1 data-v-1e279afe="" class="text-heading"></h1>
+    <h1 data-v-1e279afe="" class="text-heading">The Simpsons</h1>
     <div data-v-1e279afe="" class="info-section">
-      <div data-v-1e279afe="" class="info-part"><span data-v-1e279afe="" class="info-text"></span></div>
+      <div data-v-1e279afe="" class="info-part"><span data-v-1e279afe="" class="info-text">Animation</span></div>
       <div data-v-1e279afe="" class="info-part"><svg data-v-1e279afe="" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-subMain w-3 h-3 text-teal-500" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
           <path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path>
-        </svg><span data-v-1e279afe="" class="info-text">NaN</span></div>
+        </svg><span data-v-1e279afe="" class="info-text">1989</span></div>
       <div data-v-1e279afe="" class="info-part"><svg data-v-1e279afe="" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-subMain w-3 h-3 text-teal-500" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path>
           <path d="M13 7h-2v6h6v-2h-4z"></path>
-        </svg><span data-v-1e279afe="" class="info-text">hr</span></div>
+        </svg><span data-v-1e279afe="" class="info-text">8.7hr</span></div>
     </div>
     <div data-v-1e279afe="" class="info-section"><a data-v-1e279afe="" class="watch-button"><svg data-v-1e279afe="" class="svg-icon text-white mr-2" style="width: 1em; height: 1em; vertical-align: middle; fill: currentColor; overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <path d="M852.727563 392.447107C956.997809 458.473635 956.941389 565.559517 852.727563 631.55032L281.888889 993.019655C177.618644 1059.046186 93.090909 1016.054114 93.090909 897.137364L93.090909 126.860063C93.090909 7.879206 177.675064-35.013033 281.888889 30.977769L852.727563 392.447107 852.727563 392.447107Z"></path>

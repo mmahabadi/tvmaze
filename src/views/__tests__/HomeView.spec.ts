@@ -17,7 +17,7 @@ const mockMovies: Movie[] = [
   } as Movie
 ]
 describe('HomeView', () => {
-  let wrapper: VueWrapper<HomeView>
+  let wrapper: VueWrapper<unknown>
   let store: ReturnType<typeof useMoviesStore>
 
   function render(store: ReturnType<typeof useMoviesStore>) {

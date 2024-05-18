@@ -3,7 +3,7 @@ import { describe, expect, beforeEach, it } from 'vitest'
 import LayoutHeader from '@/layouts/components/header/LayoutHeader.vue'
 
 describe('LayoutHeader', () => {
-  let wrapper: VueWrapper<LayoutHeader>
+  let wrapper: VueWrapper<unknown>
 
   beforeEach(() => {
     wrapper = mount(LayoutHeader)
