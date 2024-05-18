@@ -3,6 +3,7 @@ export type AppSettings = {
   itemsInEachPage: number
   itemsToShowInHomePageSlider: number
   yearLimitToConsiderAsRecentToShowInHomePageSlider: number
+  toasterTimeout: number
 }
 
 export type Rating = {
@@ -78,3 +79,9 @@ export type Character = {
 export type SlideItem = Pick<Movie, 'id' | 'name'> & { rating: number; image: string }
 
 export type CastItemProps = Pick<Person, 'name'> & { image: string }
+
+export type ToasterMessage = {
+  id: number
+  message: string
+  type: 'warning' | 'error' | 'success'
+}

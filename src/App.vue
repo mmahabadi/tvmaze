@@ -11,6 +11,7 @@ provide('appSettings', {
   itemsInEachGenreSection: 20,
   itemsInEachPage: 2,
   itemsToShowInHomePageSlider: 15,
-  yearLimitToConsiderAsRecentToShowInHomePageSlider: 2020
+  yearLimitToConsiderAsRecentToShowInHomePageSlider: 2020,
+  toasterTimeout: 5000,
 } as AppSettings)
 </script>

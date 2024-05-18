@@ -2,6 +2,7 @@
 
 exports[`MainLayout > renders correctly 1`] = `
 "<main data-v-22686b16="" class="main">
+  <toaster-provider-stub data-v-22686b16=""></toaster-provider-stub>
   <div data-v-22686b16="" class="scr">
     <header data-v-22686b16="">
       <div class="container">

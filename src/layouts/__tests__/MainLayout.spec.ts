@@ -23,7 +23,8 @@ describe('MainLayout', () => {
           HeaderNav,
           LayoutFooter,
           Loading,
-          RouterLink: true
+          RouterLink: true,
+          ToasterProvider: true
         }
       }
     })

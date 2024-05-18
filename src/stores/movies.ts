@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { computed, inject, ref, type ComputedRef } from 'vue'
 import * as ApiService from '@/services/ApiService'
 import { type AppSettings, type Movie, type ShowByGenre } from '@/types'
+import { useToasterStore } from './toaster'
 
 export const useMoviesStore = defineStore('movies', () => {
   const shows = ref<Map<string, ShowByGenre>>(new Map())
@@ -14,6 +15,8 @@ export const useMoviesStore = defineStore('movies', () => {
   const ITEMS_LIMIT_FOR_RECENT_MOVIES = appSettings?.itemsToShowInHomePageSlider || 15
   const DATE_LIMIT_FOR_RECENT_MOVIES =
     appSettings?.yearLimitToConsiderAsRecentToShowInHomePageSlider || 2020
+
+  const { addToaster } = useToasterStore()
 
   const recentMovies = computed(() =>
     movies.value
@@ -45,6 +48,7 @@ export const useMoviesStore = defineStore('movies', () => {
       movies.value = await ApiService.getData()
     } catch (e) {
       error.value = e as Error
+      addToaster(`Failed to fetch shows`, 'error')
     } finally {
       loading.value = false
     }
@@ -72,6 +76,7 @@ export const useMoviesStore = defineStore('movies', () => {
         genreShows.movies = items
       }
     } catch (e) {
+      addToaster(`Failed to fetch ${genre} shows`, 'error')
       genreShows.error = e as Error
     } finally {
       genreShows.loading = false

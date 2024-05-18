@@ -12,7 +12,7 @@ describe('SectionTitle', () => {
     })
   })
   it('renders correctly', () => {
-    expect('SectionTitle').toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('renders the correct title', () => {

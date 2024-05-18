@@ -21,6 +21,6 @@ describe('SwiperWrapper', () => {
     })
   })
   it('renders correctly', () => {
-    expect('SwiperWrapper').toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })

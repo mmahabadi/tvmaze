@@ -5,11 +5,13 @@ import HeaderSearch from './components/header/HeaderSearch.vue'
 import HeaderNav from './components/header/HeaderNav.vue'
 import LayoutFooter from './components/LayoutFooter.vue'
 import Loading from '@/@ui/components/LoadingOverlay.vue'
+import ToasterProvider from '@/@ui/components/ToasterProvider.vue'
 
 defineProps<{ loading: boolean }>()
 </script>
 <template>
   <main class="main">
+    <ToasterProvider />
     <Loading v-if="loading" />
     <div class="scr" v-else>
       <LayoutHeader>
