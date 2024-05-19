@@ -43,53 +43,53 @@ This project is designed to create a TV show dashboard application that categori
    ```
 ### Running the Application
 
-**1. Development Server**:
+1. **Development Server**:
 
-To start the development server, run:
+    To start the development server, run:
 
-```bash
-npm run dev
-```
-This will start the application on http://localhost:5173.
+    ```bash
+    npm run dev
+    ```
+    This will start the application on http://localhost:5173.
 
-**2. Build**:
+2. **Build**:
 
-To build the application for production, run:
+    To build the application for production, run:
 
-```bash
-npm run build
-```
+    ```bash
+    npm run build
+    ```
 
-This will generate the production-ready files in the `dist` directory.
+    This will generate the production-ready files in the `dist` directory.
 
-**2. Preview**:
+3. **Preview**:
 
-To preview the production build, run:
-```bash
-npm run preview
-```
+    To preview the production build, run:
+    ```bash
+    npm run preview
+    ```
 
 ### Testing
-**1. Unit Tests**:
+1. **Unit Tests**:
 
-To run unit tests, use:
-```bash
-npm run test:unit
-```
-To run unit tests with the UI, use:
-```bash
-npm run test:unit-ui
-```
-**2. End-to-End Tests**:
+    To run unit tests, use:
+    ```bash
+    npm run test:unit
+    ```
+    To run unit tests with the UI, use:
+    ```bash
+    npm run test:unit-ui
+    ```
+2. **End-to-End Tests**:
 
-To run end-to-end tests, use:
-```bash
-npm run test:e2e
-```
-To run end-to-end tests with the UI, use:
-```bash
-npm run test:e2e-ui
-```
+    To run end-to-end tests, use:
+    ```bash
+    npm run test:e2e
+    ```
+    To run end-to-end tests with the UI, use:
+    ```bash
+    npm run test:e2e-ui
+    ```
 
 ## Conclusion
 
