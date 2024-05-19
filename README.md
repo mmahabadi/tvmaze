@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is designed to create a TV show dashboard application that categorizes and displays shows based on their genres. The application uses the [TVMaze API](http://www.tvmaze.com/api) to fetch TV shows and provides features such as genre-based categorization, rating-based sorting, and a detailed view for each show. Additionally, it includes a search functionality to allow users to look up TV shows by name. As users scroll down, shows are dynamically loaded based on genres, ensuring a seamless browsing experience. The project is published and can be accessed at [https://tvmaze-fawn.vercel.app/](https://tvmaze-fawn.vercel.app/).
+This project is designed to create a TV show dashboard application that categorizes and displays shows based on their genres. The application uses the [TVMaze API](http://www.tvmaze.com/api) to fetch TV shows and provides features such as genre-based categorization, rating-based sorting, and a detailed view for each show. Additionally, it includes a search functionality to allow users to look up TV shows by name. As users scroll down, shows are dynamically loaded based on genres, ensuring a seamless browsing experience. The project has undergone thorough testing, achieving an approximate unit test coverage of 85%. It is published and can be accessed at [https://tvmaze-fawn.vercel.app/](https://tvmaze-fawn.vercel.app/).
 
 ## Features
 
@@ -12,6 +12,7 @@ This project is designed to create a TV show dashboard application that categori
 - **Search functionality**: Users can search for TV shows by name.
 - **Dynamic loading**: As users scroll down, shows are dynamically loaded based on genres.
 - **Responsive design**: The application is mobile-friendly and responsive.
+- **Theme customization**: It is possible to change the primary color theme by modifying CSS variables.
 
 ## Architecture and Design Decisions
 
@@ -90,6 +91,15 @@ This project is designed to create a TV show dashboard application that categori
     ```bash
     npm run test:e2e-ui
     ```
+
+### Changing the Theme Color
+You can change the theme primary color by modifying the CSS variables in your styles. The variables are located in `src/assets/main.css`. To change the primary color and its dark variant, update the following variables in your CSS:
+```bash
+:root {
+  --primary-color: #15b8a6;
+  --primary-color-dark: #0f766e;
+}
+```
 
 ## Conclusion
 
