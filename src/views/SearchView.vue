@@ -1,36 +1,25 @@
 <script setup lang="ts">
-import { useSearchStore } from '@/stores/search'
-import { onMounted, watch, ref } from 'vue'
-import { useRoute } from 'vue-router'
-import MainLayout from '@/layouts/MainLayout.vue'
+import Loading from '@/@ui/components/LoadingOverlay.vue'
 import SectionTitle from '@/@ui/components/SectionTitle.vue'
 import SearchIcon from '@/@ui/components/icons/SearchIcon.vue'
 import ShowItem from '@/components/ShowItem.vue'
+import MainLayout from '@/layouts/MainLayout.vue'
+import { useSearchStore } from '@/stores/search'
+import { ref, watchEffect } from 'vue'
+import { useRoute } from 'vue-router'
 
 const store = useSearchStore()
 const route = useRoute()
 const query = ref('')
 
-watch(
-  () => route.query.q,
-  (newValue) => {
-    query.value = newValue?.toString() || ''
-    searchShows()
-  }
-)
-
-onMounted(() => {
+watchEffect(() => {
   query.value = route.query.q?.toString() || ''
-  searchShows()
 })
-
-const searchShows = () => {
-  query.value && store.searchShows(query.value)
-}
 </script>
 
 <template>
-  <MainLayout :loading="store.loading">
+  <MainLayout :loading="false">
+    <Loading v-if="store.loading" />
     <SectionTitle :title="`Search results for '${query}'`">
       <SearchIcon />
     </SectionTitle>

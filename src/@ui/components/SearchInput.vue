@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineEmits, defineProps, watch } from 'vue'
+import { ref, defineEmits, defineProps, watch, watchEffect } from 'vue'
 import { RouterLink } from 'vue-router'
 import SearchIcon from './icons/SearchIcon.vue'
 import SpinnerIcon from './icons/SpinnerIcon.vue'
@@ -10,14 +10,11 @@ const props = defineProps<{
   results: { id: number; name: string }[]
 }>()
 const emits = defineEmits(['update:modelValue', 'search'])
-const searchQuery = ref(props.modelValue)
+const searchQuery = ref('')
 
-watch(
-  () => props.modelValue,
-  (newValue) => {
-    searchQuery.value = newValue
-  }
-)
+watchEffect(() => {
+  searchQuery.value = props.modelValue
+})
 
 const updateValue = (value: string) => {
   searchQuery.value = value

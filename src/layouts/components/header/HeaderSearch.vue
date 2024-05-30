@@ -1,41 +1,26 @@
 <script setup lang="ts">
-import { ref, watch, computed, onMounted } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import { useSearchStore } from '@/stores/search'
 import SearchInput from '@/@ui/components/SearchInput.vue'
+import { useDebounceRef } from '@/@ui/hooks'
+import { useSearchStore } from '@/stores/search'
+import { computed, watch, watchEffect } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const store = useSearchStore()
-const searchQuery = ref('')
+const searchQuery = useDebounceRef<string>('', 500)
 const router = useRouter()
 const route = useRoute()
-type Timeout = ReturnType<typeof setTimeout>
-const timeout = ref<Timeout | null>(null)
 
 const results = computed(() =>
   store.searchResults?.slice(0, 5).map((show) => ({ name: show?.name, id: show?.id }))
 )
 
-onMounted(() => {
+watchEffect(() => {
   searchQuery.value = route.query.q?.toString() || ''
 })
 
-watch(
-  () => route.query.q,
-  (newValue) => {
-    searchQuery.value = newValue?.toString() || ''
-  }
-)
 
-/**
- * using debounce to avoid making request on every key press
- */
 watch(searchQuery, (newValue) => {
-  if (timeout.value) {
-    clearTimeout(timeout.value)
-  }
-  timeout.value = setTimeout(() => {
-    store.searchShows(newValue)
-  }, 500)
+  !!searchQuery && store.searchShows(newValue)
 })
 
 const searchHandler = () => {
@@ -43,6 +28,7 @@ const searchHandler = () => {
     router.push({ name: 'search', query: { q: searchQuery.value } })
   }
 }
+
 </script>
 <template>
   <form @submit.prevent="searchHandler">

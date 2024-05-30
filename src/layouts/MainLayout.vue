@@ -15,7 +15,7 @@ defineProps<{ loading: boolean }>()
     <Loading v-if="loading" />
     <div class="scr" v-else>
       <LayoutHeader>
-        <template v-slot:logo>
+        <template #logo>
           <HeaderLogo />
         </template>
         <template v-slot:search>

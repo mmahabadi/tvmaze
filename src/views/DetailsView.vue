@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, watch } from 'vue'
+import { computed, onMounted, watch, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import { useDetailsStore } from '@/stores/details'
 import MainLayout from '@/layouts/MainLayout.vue'
@@ -9,22 +9,25 @@ import { type Person } from '@/types'
 
 const route = useRoute()
 const store = useDetailsStore()
-const showId = computed(() => +route.params.id)
+// const showId = computed(() => +route.params.id)
 
-watch(
-  () => route.params.id,
-  (newValue) => {
-    getShow(+newValue)
-  }
-)
-
-onMounted(() => {
-  getShow(showId.value)
+// watch(
+//   () => route.params.id,
+//   (newValue) => {
+//     getShow(+newValue)
+//   }
+// )
+watchEffect(() => {
+  store.getShowDetails(+route.params.id)
 })
 
-const getShow = (id: number) => {
-  store.getShowDetails(id)
-}
+// onMounted(() => {
+//   getShow(showId.value)
+// })
+
+// const getShow = (id: number) => {
+//   store.getShowDetails(id)
+// }
 
 const casts = computed(() => store.details?._embedded?.cast?.map((item) => item.person as Person))
 </script>

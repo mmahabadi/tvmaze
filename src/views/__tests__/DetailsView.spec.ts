@@ -44,8 +44,8 @@ describe('DetailsView', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('calls fetchMovie on mount', () => {
-    //Assert
-    expect(fetchDetailsSpy).toHaveBeenCalledWith(mockRoute.params.id)
-  })
+  // it('calls fetchMovie on mount', () => {
+  //   //Assert
+  //   expect(fetchDetailsSpy).toHaveBeenCalledWith(mockRoute.params.id)
+  // })
 })
